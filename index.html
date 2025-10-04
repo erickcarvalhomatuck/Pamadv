@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Pamela Bacellar - Advocacia Criminal Especializada</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Paleta de cores refinada para profissionalismo jurídico */
+        :root {
+            --bronze-principal: #a67c52; /* Bronze mais sóbrio */
+            --bronze-dourado: #b8945f;   /* Destaques importantes */
+            --ouro-elegante: #c8a86a;    /* Para elementos premium */
+            --grafite-profundo: #1a1a1a; /* Quase preto para seriedade */
+            --grafite-escuro: #2a2a2a;   /* Para headers e elementos principais */
+            --grafite-medio: #3a3a3a;    /* Para elementos secundários */
+            --marfim-solido: #f8f6f2;    /* Fundo limpo e profissional */
+            --off-white: #fefefe;         /* Para contraste máximo */
+            --cinza-suave: #e8e6e1;      /* Para separações sutis */
+            --sombra-suave: rgba(0, 0, 0, 0.08);
+            --sombra-media: rgba(0, 0, 0, 0.12);
+        }
+
+        /* Reset e estilos gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', 'Times New Roman', serif;
+        }
+
+        body {
+            background-color: var(--marfim-solido);
+            color: var(--grafite-profundo);
+            line-height: 1.7;
+            overflow-x: hidden;
+            font-weight: 400;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--grafite-profundo);
+            font-weight: 600;
+            line-height: 1.3;
+            letter-spacing: -0.02em;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.6rem;
+            color: var(--grafite-profundo);
+            display: inline-block;
+            position: relative;
+            font-weight: 700;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--bronze-principal), var(--ouro-elegante));
+            bottom: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 36px;
+            background: linear-gradient(135deg, var(--bronze-principal), var(--bronze-dourado));
+            color: var(--off-white);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.4s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(166, 124, 82, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(166, 124, 82, 0.4);
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        /* Botão WhatsApp */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        /* Header refinado */
+        header {
+            background-color: var(--grafite-escuro);
+            padding: 22px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .header-scrolled {
+            padding: 16px 0;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .logo-text h1 {
+            font-size: 1.9rem;
+            color: var(--ouro-elegante);
+            font-weight: 700;
+            letter-spacing: 1.2px;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--cinza-suave);
+            margin-top: 4px;
+            letter-spacing: 2.5px;
+            font-weight: 400;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 36px;
+        }
+
+        nav ul li a {
+            color: var(--off-white);
+            text-decoration: none;
+            font-size: 1.05rem;
+            transition: all 0.3s;
+            position: relative;
+            font-weight: 500;
+            padding: 8px 0;
+        }
+
+        nav ul li a:hover {
+            color: var(--bronze-dourado);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(90deg, var(--bronze-principal), var(--ouro-elegante));
+            transition: width 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.6rem;
+            color: var(--ouro-elegante);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .mobile-menu:hover {
+            color: var(--bronze-dourado);
+        }
+
+        /* Hero Section refinada */
+        .hero {
+            background: linear-gradient(135deg, var(--grafite-escuro) 0%, var(--grafite-profundo) 100%);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--off-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="%23a67c52" stroke-width="0.3" opacity="0.15"/></svg>');
+            opacity: 0.4;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h2 {
+            font-size: 3.4rem;
+            margin-bottom: 24px;
+            color: var(--off-white);
+            line-height: 1.2;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.35rem;
+            margin-bottom: 40px;
+            color: var(--cinza-suave);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .btn {
+            background: linear-gradient(135deg, var(--bronze-principal), var(--ouro-elegante));
+            color: var(--off-white);
+            border: none;
+            font-size: 1.1rem;
+            padding: 18px 42px;
+        }
+
+        /* Sobre refinado */
+        .sobre {
+            background-color: var(--marfim-solido);
+            position: relative;
+        }
+
+        .sobre::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><rect width="60" height="60" fill="none" stroke="%23e8e6e1" stroke-width="0.5"/></svg>');
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .sobre-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .sobre-texto {
+            flex: 1;
+        }
+
+        .sobre-texto h3 {
+            font-size: 2rem;
+            color: var(--grafite-profundo);
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .sobre-texto p {
+            font-size: 1.1rem;
+            color: var(--grafite-medio);
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .destaque {
+            color: var(--bronze-principal);
+            font-weight: 600;
+        }
+
+        .sobre-imagem {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+
+        .sobre-imagem::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--bronze-principal);
+            top: 20px;
+            left: 20px;
+            z-index: 0;
+            border-radius: 4px;
+            opacity: 0.7;
+        }
+
+        .foto-advogada {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            border-radius: 4px;
+            position: relative;
+            z-index: 1;
+            filter: grayscale(20%) contrast(110%);
+            transition: filter 0.5s;
+            box-shadow: 0 10px 30px var(--sombra-media);
+        }
+
+        .sobre-imagem:hover .foto-advogada {
+            filter: grayscale(0%) contrast(115%);
+        }
+
+        /* Áreas de Atuação refinadas */
+        .areas {
+            background-color: var(--off-white);
+            position: relative;
+        }
+
+        .areas::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--marfim-solido) 0%, transparent 100%);
+            z-index: 0;
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .area-card {
+            background-color: var(--off-white);
+            padding: 45px 35px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border-top: 4px solid var(--bronze-principal);
+            box-shadow: 0 8px 25px var(--sombra-suave);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .area-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(166, 124, 82, 0.03) 0%, rgba(200, 168, 106, 0.03) 100%);
+            z-index: 0;
+        }
+
+        .area-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 15px 35px var(--sombra-media);
+        }
+
+        .area-card i {
+            font-size: 2.8rem;
+            color: var(--bronze-principal);
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .area-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 18px;
+            color: var(--grafite-profundo);
+            position: relative;
+            z-index: 1;
+        }
+
+        .area-card p {
+            color: var(--grafite-medio);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Conteúdo/Blog refinado */
+        .conteudo {
+            background-color: var(--marfim-solido);
+            position: relative;
+        }
+
+        .conteudo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+        }
+
+        .conteudo-card {
+            background-color: var(--off-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px var(--sombra-suave);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .conteudo-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px var(--sombra-media);
+        }
+
+        .conteudo-img {
+            height: 220px;
+            background: linear-gradient(135deg, var(--grafite-escuro) 0%, var(--grafite-medio) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--off-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .conteudo-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(166, 124, 82, 0.2) 0%, rgba(200, 168, 106, 0.2) 100%);
+        }
+
+        .conteudo-img i {
+            font-size: 3.5rem;
+            position: relative;
+            z-index: 1;
+            color: var(--bronze-dourado);
+        }
+
+        .conteudo-info {
+            padding: 30px;
+        }
+
+        .conteudo-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--grafite-profundo);
+            line-height: 1.4;
+        }
+
+        .conteudo-info p {
+            color: var(--grafite-medio);
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .conteudo-info a {
+            color: var(--bronze-principal);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s;
+        }
+
+        .conteudo-info a i {
+            margin-left: 8px;
+            transition: transform 0.3s;
+        }
+
+        .conteudo-info a:hover {
+            color: var(--bronze-dourado);
+        }
+
+        .conteudo-info a:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Contato refinado */
+        .contato {
+            background: linear-gradient(135deg, var(--grafite-escuro) 0%, var(--grafite-profundo) 100%);
+            color: var(--off-white);
+            position: relative;
+        }
+
+        .contato::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="%23a67c52" stroke-width="0.3" opacity="0.1"/></svg>');
+        }
+
+        .contato .section-title h2 {
+            color: var(--off-white);
+        }
+
+        .contato .section-title h2::after {
+            background: linear-gradient(90deg, var(--bronze-dourado), var(--ouro-elegante));
+        }
+
+        .contato-container {
+            display: flex;
+            gap: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contato-info {
+            flex: 1;
+        }
+
+        .contato-info h3 {
+            color: var(--ouro-elegante);
+            margin-bottom: 25px;
+            font-size: 1.9rem;
+            font-weight: 700;
+        }
+
+        .contato-info p {
+            margin-bottom: 18px;
+            color: var(--cinza-suave);
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+
+        .contato-info i {
+            margin-right: 12px;
+            color: var(--bronze-dourado);
+            width: 20px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .contato-social {
+            margin-top: 35px;
+        }
+
+        .contato-social a {
+            display: inline-block;
+            margin-right: 18px;
+            color: var(--cinza-suave);
+            font-size: 1.6rem;
+            transition: all 0.3s;
+        }
+
+        .contato-social a:hover {
+            color: var(--bronze-dourado);
+            transform: translateY(-3px);
+        }
+
+        .form-container {
+            flex: 1;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--cinza-suave);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--off-white);
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--bronze-dourado);
+            background-color: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 0 2px rgba(166, 124, 82, 0.2);
+        }
+
+        .form-group textarea {
+            height: 160px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            background: linear-gradient(135deg, var(--bronze-principal), var(--bronze-dourado));
+            color: var(--off-white);
+            border: none;
+            padding: 16px 36px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.05rem;
+            font-weight: 600;
+            transition: all 0.4s;
+            box-shadow: 0 4px 15px rgba(166, 124, 82, 0.3);
+        }
+
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(166, 124, 82, 0.4);
+        }
+
+        /* Footer refinado */
+        footer {
+            background-color: var(--grafite-profundo);
+            padding: 50px 0 30px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-logo {
+            margin-bottom: 25px;
+        }
+
+        .footer-logo h2 {
+            color: var(--ouro-elegante);
+            font-size: 1.9rem;
+            font-weight: 700;
+        }
+
+        .footer-links {
+            margin-bottom: 25px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .footer-links a {
+            color: var(--cinza-suave);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 1rem;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--bronze-dourado);
+            transition: width 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--bronze-dourado);
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .copyright {
+            color: var(--cinza-suave);
+            font-size: 0.95rem;
+            margin-top: 15px;
+        }
+
+        .oab-info {
+            color: var(--cinza-suave);
+            font-size: 0.95rem;
+            margin-top: 8px;
+            font-weight: 500;
+        }
+
+        .divider {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--bronze-principal), var(--ouro-elegante));
+            margin: 20px auto;
+            border-radius: 1px;
+        }
+
+        /* Responsividade refinada */
+        @media (max-width: 1100px) {
+            .sobre-content {
+                gap: 40px;
+            }
+            
+            .contato-container {
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .sobre-content {
+                flex-direction: column;
+            }
+            
+            .contato-container {
+                flex-direction: column;
+            }
+            
+            .sobre-imagem {
+                order: -1;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            
+            .hero h2 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 85px;
+                left: 0;
+                width: 100%;
+                background-color: var(--grafite-escuro);
+                padding: 25px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 12px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2.4rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            section {
+                padding: 80px 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .areas-grid, .conteudo-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .area-card, .conteudo-card {
+                padding: 35px 25px;
+            }
+            
+            .btn {
+                padding: 14px 30px;
+                font-size: 1rem;
+            }
+            
+            .whatsapp-btn {
+                width: 55px;
+                height: 55px;
+                font-size: 1.6rem;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Botão WhatsApp -->
+    <a href="https://wa.me/5535999031837?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Pamela%20Bacellar" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="logopam.png" alt="Logo Pamela Bacellar" class="logo-img">
+                <div class="logo-text">
+                    <h1><span>ADVOCACIA CRIMINAL</span></h1>
+                </div>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#areas">Áreas de Atuação</a></li>
+                    <li><a href="#conteudo">Conteúdo</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container hero-content">
+            <h2>Defesa Criminal com Excelência e Estratégia</h2>
+            <p>Especializada em combater condenações injustas e garantir que a justiça prevaleça em todas as etapas do processo penal.</p>
+            <a href="#contato" class="btn">Agende uma Consulta</a>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section class="sobre" id="sobre">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sobre a Dra. Pamela</h2>
+            </div>
+            <div class="sobre-content">
+                <div class="sobre-texto">
+                    <h3>Dra. Pamela Bacellar</h3>
+                    <p>Advogada criminalista formada pela <span class="destaque">PUC Minas</span> e pós-graduanda em <span class="destaque">Perícia Criminal</span>. Minha trajetória no Direito foi impulsionada pelo compromisso inabalável com a justiça e pela defesa intransigente dos direitos fundamentais.</p>
+                    <p>Atuo com excelência tanto na <span class="destaque">área criminal</span> quanto na <span class="destaque">cível</span>, com enfoque especializado na análise técnica de provas materiais e digitais, assegurando a rigorosa observância da cadeia de custódia.</p>
+                    <p>Enfrento diariamente casos de <span class="destaque">condenações injustas</span> e <span class="destaque">penas desproporcionais</span>, demonstrando que o processo não se encerra com a sentença. Através da <span class="destaque">revisão criminal</span>, busco reparar injustiças e restaurar direitos mesmo após o trânsito em julgado.</p>
+                </div>
+                <div class="sobre-imagem">
+                    <img src="pamela.png" alt="Dra. Pamela Bacellar" class="foto-advogada">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Áreas de Atuação -->
+    <section class="areas" id="areas">
+        <div class="container">
+            <div class="section-title">
+                <h2>Áreas de Atuação</h2>
+            </div>
+            <div class="areas-grid">
+                <div class="area-card">
+                    <i class="fas fa-gavel"></i>
+                    <h3>Defesa Criminal</h3>
+                    <p>Atuação estratégica em todas as fases do processo penal, desde a investigação preliminar até recursos em instâncias superiores, com foco na preservação de direitos e garantias fundamentais.</p>
+                </div>
+                <div class="area-card">
+                    <i class="fas fa-microscope"></i>
+                    <h3>Perícia Criminal</h3>
+                    <p>Análise técnica especializada de provas materiais e digitais, com rigorosa observância da cadeia de custódia para assegurar a validade processual e a robustez probatória.</p>
+                </div>
+                <div class="area-card">
+                    <i class="fas fa-file-contract"></i>
+                    <h3>Revisão Criminal</h3>
+                    <p>Atuação dedicada em processos de revisão criminal para casos de condenações injustas ou penas desproporcionais, buscando a justiça mesmo após o trânsito em julgado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conteúdo/Blog -->
+    <section class="conteudo" id="conteudo">
+        <div class="container">
+            <div class="section-title">
+                <h2>Conteúdo Jurídico</h2>
+            </div>
+            <div class="conteudo-grid">
+                <div class="conteudo-card">
+                    <div class="conteudo-img">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="conteudo-info">
+                        <h3>Provas Digitais no Processo Penal Contemporâneo</h3>
+                        <p>Análise sobre a valoração das evidências digitais no processo criminal contemporâneo e a fundamental importância da cadeia de custódia para sua validade probatória.</p>
+                        <a href="https://www.instagram.com/p/DPNHh18Dg6p/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">Ler mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="conteudo-card">
+                    <div class="conteudo-img">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <div class="conteudo-info">
+                        <h3>Audiência de Custódia: Explicação Prática</h3>
+                        <p>A Dra. Pamela explica o que é audiência de custódia por meio de um caso vivenciado, demonstrando sua importância no processo penal.</p>
+                        <a href="https://www.instagram.com/reel/DPUhRWhDv-b/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">Ler mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="conteudo-card">
+                    <div class="conteudo-img">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <div class="conteudo-info">
+                        <h3>Revisão Criminal: Como Pode Beneficiar o Cliente</h3>
+                        <p>A Dra. Pamela explica o que seria a revisão criminal e como esse instrumento jurídico pode beneficiar pessoas que sofreram condenações injustas.</p>
+                        <a href="https://www.instagram.com/reel/DPO6wtpjkEN/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">Ler mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="contato" id="contato">
+        <div class="container">
+            <div class="section-title">
+                <h2>Entre em Contato</h2>
+            </div>
+            <div class="contato-container">
+                <div class="contato-info">
+                    <h3>Informações de Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Poços de Caldas - MG</p>
+                    <p><i class="fas fa-phone"></i> (35) 99903-1837</p>
+                    <p><i class="fas fa-envelope"></i> Em breve</p>
+                    <p><i class="fas fa-clock"></i> Segunda a Sexta: 9h às 18h</p>
+                    <p><i class="fas fa-exclamation-circle"></i> Consulta inicial para análise do caso</p>
+                    
+                    <div class="contato-social">
+                        <a href="https://wa.me/5535999031837?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Pamela%20Bacellar" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/pamelabacellaradv/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="form-container">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="nome">Nome Completo</label>
+                            <input type="text" id="nome" name="nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" id="telefone" name="telefone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" placeholder="Descreva brevemente sua situação..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <h2>PAMELA BACELLAR</h2>
+            </div>
+            <div class="divider"></div>
+            <div class="footer-links">
+                <a href="#inicio">Início</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#areas">Áreas de Atuação</a>
+                <a href="#conteudo">Conteúdo</a>
+                <a href="#contato">Contato</a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Dra. Pamela Bacellar - Advocacia Criminal. Todos os direitos reservados.</p>
+            </div>
+            <div class="oab-info">
+                <p>PAMELA BACELLAR DA SILVA - OAB/MG Nº 241622</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+
+        // Fechar menu ao clicar em um link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('nav ul').classList.remove('show');
+            });
+        });
+
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Obrigada pelo seu interesse! Entrarei em contato em breve para agendarmos uma consulta.');
+            this.reset();
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 90,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
