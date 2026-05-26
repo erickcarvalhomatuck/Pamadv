@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Pamela Bacellar — Advocacia Criminal Especializada</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tiny.cloud/1/98cda50q77r85n38ke62s1jwg0p6t2hjvb5ood80dvj2vje6/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <style>
+        :root {
+            --gold: #b8945f;
+            --gold-light: #d4ae7a;
+            --gold-dark: #8a6b42;
+            --ink: #0e0e0e;
+            --ink-soft: #1c1c1c;
+            --ink-muted: #3d3d3d;
+            --parchment: #faf8f3;
+            --parchment-dark: #f2ede3;
+            --cream: #fffef9;
+            --line: rgba(184,148,95,0.2);
+            --line-strong: rgba(184,148,95,0.4);
+        }
+
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--parchment);
+            color: var(--ink);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        /* ── TYPOGRAPHY ── */
+        .serif { font-family: 'Cormorant Garamond', serif; }
+
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; line-height: 1.15; }
+
+        /* ── SCROLLBAR ── */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: var(--parchment); }
+        ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+        /* ── UTILITIES ── */
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+
+        /* ── WHATSAPP ── */
+        .whatsapp-btn {
+            position: fixed; bottom: 28px; right: 28px;
+            background: #25D366; color: #fff;
+            width: 58px; height: 58px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.7rem; box-shadow: 0 6px 24px rgba(37,211,102,.4);
+            z-index: 900; text-decoration: none;
+            transition: transform .3s, box-shadow .3s;
+        }
+        .whatsapp-btn:hover { transform: scale(1.1); box-shadow: 0 10px 30px rgba(37,211,102,.5); }
+
+        /* ── ADMIN BTN ── */
+        .admin-btn {
+            position: fixed; bottom: 28px; left: 28px;
+            background: var(--ink-soft); color: var(--gold);
+            width: 46px; height: 46px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem; z-index: 900; cursor: pointer;
+            transition: transform .3s, background .3s;
+            box-shadow: 0 4px 16px rgba(0,0,0,.3);
+        }
+        .admin-btn:hover { transform: scale(1.08); background: var(--ink); }
+
+        /* ── HEADER ── */
+        header {
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+            padding: 22px 0;
+            transition: padding .4s, background .4s, backdrop-filter .4s;
+            background: transparent;
+        }
+        header.scrolled {
+            padding: 14px 0;
+            background: rgba(14,14,14,.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(184,148,95,.15);
+        }
+        .header-inner {
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .logo-wrap { display: flex; align-items: center; gap: 14px; }
+        .logo-img { height: 46px; filter: brightness(1.1); }
+        .logo-text h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.45rem; font-weight: 700;
+            color: var(--gold-light);
+            letter-spacing: .06em;
+        }
+        .logo-text span {
+            display: block; font-family: 'Outfit', sans-serif;
+            font-size: .68rem; font-weight: 300;
+            color: rgba(255,255,255,.55);
+            letter-spacing: .28em; text-transform: uppercase;
+            margin-top: 2px;
+        }
+        nav ul { display: flex; list-style: none; gap: 36px; }
+        nav ul li a {
+            color: rgba(255,255,255,.8); text-decoration: none;
+            font-size: .9rem; font-weight: 400; letter-spacing: .06em;
+            transition: color .3s; position: relative; padding-bottom: 4px;
+        }
+        nav ul li a::after {
+            content: ''; position: absolute; left: 0; bottom: 0;
+            width: 0; height: 1px; background: var(--gold);
+            transition: width .4s cubic-bezier(.22,.61,.36,1);
+        }
+        nav ul li a:hover { color: var(--gold-light); }
+        nav ul li a:hover::after { width: 100%; }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+        .hamburger span {
+            display: block; width: 24px; height: 1.5px;
+            background: var(--gold-light); transition: all .3s;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh;
+            background: var(--ink);
+            display: flex; align-items: center;
+            position: relative; overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse 80% 60% at 70% 50%, rgba(184,148,95,.08) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 80% at 20% 80%, rgba(184,148,95,.05) 0%, transparent 55%);
+        }
+        .hero-lines {
+            position: absolute; inset: 0;
+            background-image:
+                linear-gradient(rgba(184,148,95,.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(184,148,95,.06) 1px, transparent 1px);
+            background-size: 80px 80px;
+        }
+        .hero-content {
+            position: relative; z-index: 2;
+            padding: 160px 0 100px;
+            max-width: 760px;
+        }
+        .hero-eyebrow {
+            display: inline-flex; align-items: center; gap: 10px;
+            font-size: .75rem; font-weight: 400; letter-spacing: .3em;
+            text-transform: uppercase; color: var(--gold);
+            margin-bottom: 28px;
+        }
+        .hero-eyebrow::before {
+            content: ''; display: block;
+            width: 32px; height: 1px; background: var(--gold);
+        }
+        .hero h2 {
+            font-size: clamp(2.8rem, 6vw, 5.2rem);
+            color: #fff;
+            font-weight: 300;
+            margin-bottom: 8px;
+            line-height: 1.1;
+        }
+        .hero h2 em {
+            font-style: italic; color: var(--gold-light);
+            font-weight: 300;
+        }
+        .hero-sub {
+            font-size: 1.1rem; color: rgba(255,255,255,.55);
+            max-width: 520px; margin: 28px 0 48px;
+            font-weight: 300; line-height: 1.75;
+        }
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 16px 38px;
+            background: var(--gold);
+            color: var(--ink);
+            font-family: 'Outfit', sans-serif;
+            font-size: .85rem; font-weight: 600;
+            letter-spacing: .12em; text-transform: uppercase;
+            text-decoration: none;
+            border: none; cursor: pointer;
+            transition: background .3s, transform .3s, box-shadow .3s;
+            position: relative; overflow: hidden;
+        }
+        .btn-primary::after {
+            content: ''; position: absolute;
+            top: 0; left: -100%; width: 60%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,.25), transparent);
+            transition: left .5s;
+        }
+        .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 10px 32px rgba(184,148,95,.35); }
+        .btn-primary:hover::after { left: 150%; }
+        .btn-outline {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 15px 36px;
+            background: transparent;
+            color: rgba(255,255,255,.8);
+            font-family: 'Outfit', sans-serif;
+            font-size: .85rem; font-weight: 400;
+            letter-spacing: .1em; text-transform: uppercase;
+            text-decoration: none;
+            border: 1px solid rgba(184,148,95,.4); cursor: pointer;
+            transition: all .3s;
+        }
+        .btn-outline:hover { border-color: var(--gold); color: var(--gold-light); transform: translateY(-2px); }
+        .hero-ctas { display: flex; gap: 18px; flex-wrap: wrap; }
+
+        /* ── SECTION BASE ── */
+        section { padding: 110px 0; }
+        .section-label {
+            display: flex; align-items: center; gap: 12px;
+            font-size: .72rem; font-weight: 500; letter-spacing: .3em;
+            text-transform: uppercase; color: var(--gold);
+            margin-bottom: 18px;
+        }
+        .section-label::before {
+            content: ''; display: block;
+            width: 28px; height: 1px; background: var(--gold);
+        }
+        .section-title-text {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            color: var(--ink); font-weight: 300; margin-bottom: 20px;
+        }
+        .section-title-text em {
+            font-style: italic; color: var(--gold-dark);
+        }
+        .title-rule {
+            width: 60px; height: 1px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            margin-bottom: 40px;
+        }
+
+        /* ── SOBRE ── */
+        .sobre { background: var(--cream); }
+        .sobre-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 80px; align-items: center;
+        }
+        .sobre-img-wrap {
+            position: relative;
+        }
+        .sobre-img-wrap::before {
+            content: ''; position: absolute;
+            top: 24px; left: 24px; right: -24px; bottom: -24px;
+            border: 1px solid var(--line-strong);
+            z-index: 0;
+        }
+        .sobre-img-wrap img {
+            width: 100%; display: block;
+            position: relative; z-index: 1;
+            filter: grayscale(15%) contrast(1.05);
+            transition: filter .5s;
+        }
+        .sobre-img-wrap:hover img { filter: grayscale(0%) contrast(1.08); }
+        .sobre-badge {
+            position: absolute; bottom: -20px; right: -20px;
+            z-index: 2;
+            background: var(--gold);
+            color: var(--ink);
+            padding: 18px 24px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem; font-weight: 600;
+            line-height: 1.3; text-align: center;
+        }
+        .sobre-badge strong { display: block; font-size: 2rem; line-height: 1; }
+        .sobre-text h3 {
+            font-size: 1.6rem; font-weight: 300;
+            color: var(--ink-muted); margin-bottom: 10px;
+        }
+        .sobre-text h3 span { color: var(--gold-dark); font-weight: 600; }
+        .sobre-text p {
+            font-size: 1rem; color: var(--ink-muted);
+            line-height: 1.8; margin-bottom: 20px;
+        }
+        .sobre-text p strong { color: var(--ink); font-weight: 600; }
+        .credenciais {
+            display: flex; flex-direction: column; gap: 10px; margin-top: 30px;
+        }
+        .cred-item {
+            display: flex; align-items: center; gap: 12px;
+            font-size: .9rem; color: var(--ink-muted);
+        }
+        .cred-item i { color: var(--gold); width: 16px; font-size: .85rem; }
+
+        /* ── AREAS ── */
+        .areas { background: var(--ink); }
+        .areas .section-title-text { color: #fff; }
+        .areas .section-label { color: var(--gold); }
+        .areas-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+            background: rgba(184,148,95,.15);
+            border: 1px solid rgba(184,148,95,.15);
+            margin-top: 60px;
+        }
+        .area-card {
+            background: var(--ink-soft);
+            padding: 54px 40px;
+            transition: background .4s;
+            cursor: default;
+        }
+        .area-card:hover { background: #222; }
+        .area-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem; font-weight: 300;
+            color: rgba(184,148,95,.25); line-height: 1;
+            margin-bottom: 24px;
+        }
+        .area-icon {
+            color: var(--gold); font-size: 1.6rem; margin-bottom: 20px;
+            display: block;
+        }
+        .area-card h3 {
+            font-size: 1.5rem; color: #fff; font-weight: 500;
+            margin-bottom: 16px; line-height: 1.2;
+        }
+        .area-card p { font-size: .92rem; color: rgba(255,255,255,.45); line-height: 1.75; }
+        .area-card:hover p { color: rgba(255,255,255,.6); }
+
+        /* ── CONTEÚDO ── */
+        .conteudo { background: var(--parchment-dark); }
+        .conteudo-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 28px; margin-top: 60px;
+        }
+        .conteudo-card {
+            background: var(--cream);
+            border: 1px solid var(--line);
+            transition: transform .3s, border-color .3s, box-shadow .3s;
+            overflow: hidden;
+        }
+        .conteudo-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--line-strong);
+            box-shadow: 0 16px 40px rgba(0,0,0,.08);
+        }
+        .card-img-area {
+            height: 200px;
+            background: var(--ink-soft);
+            display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden;
+        }
+        .card-img-area::after {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(184,148,95,.15), transparent);
+        }
+        .card-img-area i {
+            font-size: 2.6rem; color: var(--gold); position: relative; z-index: 1;
+        }
+        .card-body { padding: 28px 30px; }
+        .card-body h3 {
+            font-size: 1.3rem; color: var(--ink);
+            margin-bottom: 12px; font-weight: 600;
+        }
+        .card-body p { font-size: .92rem; color: var(--ink-muted); line-height: 1.7; margin-bottom: 20px; }
+        .card-link {
+            font-size: .78rem; font-weight: 600; letter-spacing: .14em;
+            text-transform: uppercase; color: var(--gold-dark);
+            text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+            transition: gap .3s, color .3s;
+        }
+        .card-link:hover { gap: 10px; color: var(--gold); }
+
+        /* ── CONTATO ── */
+        .contato {
+            background: var(--ink);
+            position: relative; overflow: hidden;
+        }
+        .contato::before {
+            content: ''; position: absolute;
+            top: 0; right: 0; width: 50%; height: 100%;
+            background: linear-gradient(135deg, rgba(184,148,95,.04), transparent);
+        }
+        .contato .section-title-text { color: #fff; }
+        .contato-grid {
+            display: grid; grid-template-columns: 1fr 1.2fr;
+            gap: 80px; position: relative; z-index: 1;
+        }
+        .contato-info-block { padding-top: 10px; }
+        .contato-info-block h3 {
+            font-size: 1.2rem; color: var(--gold-light);
+            font-weight: 400; letter-spacing: .06em;
+            margin-bottom: 32px;
+        }
+        .info-item {
+            display: flex; align-items: flex-start; gap: 14px;
+            margin-bottom: 20px;
+        }
+        .info-icon {
+            width: 36px; height: 36px; flex-shrink: 0;
+            border: 1px solid rgba(184,148,95,.3);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--gold); font-size: .85rem;
+            margin-top: 2px;
+        }
+        .info-item span { font-size: .95rem; color: rgba(255,255,255,.6); line-height: 1.5; }
+        .social-row { display: flex; gap: 14px; margin-top: 36px; }
+        .social-link {
+            width: 42px; height: 42px;
+            border: 1px solid rgba(184,148,95,.3);
+            display: flex; align-items: center; justify-content: center;
+            color: rgba(255,255,255,.6); font-size: 1.1rem;
+            text-decoration: none;
+            transition: border-color .3s, color .3s, background .3s;
+        }
+        .social-link:hover { border-color: var(--gold); color: var(--gold); background: rgba(184,148,95,.08); }
+
+        /* FORM */
+        .contact-form { display: flex; flex-direction: column; gap: 18px; }
+        .form-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+        .field { display: flex; flex-direction: column; gap: 7px; }
+        .field label {
+            font-size: .72rem; font-weight: 500; letter-spacing: .2em;
+            text-transform: uppercase; color: rgba(255,255,255,.4);
+        }
+        .field input, .field textarea {
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(184,148,95,.2);
+            padding: 14px 16px;
+            color: #fff; font-family: 'Outfit', sans-serif; font-size: .95rem;
+            outline: none; transition: border-color .3s, background .3s;
+            resize: none;
+        }
+        .field input:focus, .field textarea:focus {
+            border-color: rgba(184,148,95,.6); background: rgba(255,255,255,.06);
+        }
+        .field input::placeholder, .field textarea::placeholder { color: rgba(255,255,255,.2); }
+        .field textarea { height: 130px; }
+
+        /* ── FOOTER ── */
+        footer {
+            background: #080808;
+            padding: 50px 0 30px;
+            border-top: 1px solid rgba(184,148,95,.12);
+        }
+        .footer-inner {
+            display: flex; flex-direction: column; align-items: center;
+            gap: 24px; text-align: center;
+        }
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem; font-weight: 600;
+            color: var(--gold-light); letter-spacing: .08em;
+        }
+        .footer-rule {
+            width: 60px; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+        .footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 28px; }
+        .footer-nav a {
+            font-size: .82rem; color: rgba(255,255,255,.4);
+            text-decoration: none; letter-spacing: .06em;
+            transition: color .3s;
+        }
+        .footer-nav a:hover { color: var(--gold); }
+        .footer-copy {
+            font-size: .78rem; color: rgba(255,255,255,.25); line-height: 1.6;
+        }
+        .oab-tag {
+            font-size: .75rem; color: rgba(184,148,95,.45);
+            letter-spacing: .08em;
+        }
+
+        /* ── ADMIN & MODALS ── */
+        .overlay {
+            display: none; position: fixed; inset: 0;
+            background: rgba(0,0,0,.85); z-index: 2000;
+            overflow-y: auto;
+            backdrop-filter: blur(4px);
+        }
+        .modal-box {
+            background: var(--cream);
+            margin: 50px auto;
+            padding: 40px;
+            width: 90%; max-width: 1000px;
+            border-top: 3px solid var(--gold);
+        }
+        .modal-header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 32px; padding-bottom: 20px;
+            border-bottom: 1px solid var(--line);
+        }
+        .modal-header h2 {
+            font-size: 1.8rem; color: var(--ink);
+        }
+        .modal-close {
+            background: none; border: none; font-size: 1.3rem;
+            color: var(--ink-muted); cursor: pointer;
+            transition: color .3s;
+        }
+        .modal-close:hover { color: var(--gold); }
+        .admin-tabs-row { display: flex; border-bottom: 1px solid var(--line); margin-bottom: 28px; }
+        .tab-btn {
+            padding: 11px 22px; background: none; border: none;
+            font-family: 'Outfit', sans-serif; font-size: .85rem; font-weight: 500;
+            color: var(--ink-muted); cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: color .3s, border-color .3s;
+            letter-spacing: .06em;
+        }
+        .tab-btn.active { color: var(--gold-dark); border-bottom-color: var(--gold); }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        .af-group { margin-bottom: 20px; }
+        .af-group label {
+            display: block; font-size: .75rem; font-weight: 600;
+            letter-spacing: .15em; text-transform: uppercase;
+            color: var(--ink-muted); margin-bottom: 7px;
+        }
+        .af-group input, .af-group select, .af-group textarea {
+            width: 100%; padding: 12px 14px;
+            border: 1px solid var(--line-strong);
+            background: #fff; font-family: 'Outfit', sans-serif;
+            font-size: .95rem; color: var(--ink); outline: none;
+            transition: border-color .3s;
+        }
+        .af-group input:focus, .af-group select:focus, .af-group textarea:focus {
+            border-color: var(--gold);
+        }
+        .af-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+        .af-group textarea { height: 120px; resize: vertical; }
+
+        .pub-item {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 16px 20px;
+            border: 1px solid var(--line);
+            margin-bottom: 10px;
+            transition: border-color .3s;
+        }
+        .pub-item:hover { border-color: var(--line-strong); }
+        .pub-item h4 { font-size: 1rem; color: var(--ink); margin-bottom: 3px; }
+        .pub-item p { font-size: .8rem; color: var(--ink-muted); }
+        .pub-actions { display: flex; gap: 10px; }
+        .btn-edit, .btn-del {
+            padding: 7px 16px; border: none; cursor: pointer;
+            font-family: 'Outfit', sans-serif; font-size: .8rem; font-weight: 500;
+            transition: all .3s;
+        }
+        .btn-edit { background: var(--gold); color: var(--ink); }
+        .btn-edit:hover { background: var(--gold-light); }
+        .btn-del { background: #f0e8e8; color: #a33; }
+        .btn-del:hover { background: #fcd; }
+
+        /* LOGIN MODAL */
+        .login-modal {
+            display: none; position: fixed; inset: 0;
+            background: rgba(0,0,0,.88); z-index: 3000;
+            align-items: center; justify-content: center;
+            backdrop-filter: blur(6px);
+        }
+        .login-box {
+            background: var(--cream);
+            padding: 48px 44px;
+            width: 90%; max-width: 420px;
+            border-top: 3px solid var(--gold);
+        }
+        .login-box h2 {
+            font-size: 1.8rem; color: var(--ink);
+            margin-bottom: 8px;
+        }
+        .login-box p { font-size: .9rem; color: var(--ink-muted); margin-bottom: 30px; }
+        .login-actions { display: flex; justify-content: space-between; align-items: center; margin-top: 24px; }
+        .btn-cancel-plain {
+            background: none; border: none;
+            font-family: 'Outfit', sans-serif; font-size: .9rem;
+            color: var(--ink-muted); cursor: pointer;
+            transition: color .3s;
+        }
+        .btn-cancel-plain:hover { color: var(--ink); }
+
+        /* ARTICLE PAGE */
+        .article-page {
+            display: none; position: fixed; inset: 0;
+            background: var(--parchment); z-index: 2000;
+            overflow-y: auto;
+        }
+        .article-hero {
+            background: var(--ink); padding: 120px 0 70px;
+            position: relative; overflow: hidden;
+        }
+        .article-hero::before {
+            content: ''; position: absolute; inset: 0;
+            background-image:
+                linear-gradient(rgba(184,148,95,.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(184,148,95,.05) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+        .article-wrap { max-width: 820px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; }
+        .article-title { font-size: clamp(2rem, 4vw, 3.2rem); color: #fff; font-weight: 300; line-height: 1.15; }
+        .article-meta-row {
+            display: flex; align-items: center; gap: 18px;
+            margin-top: 24px; flex-wrap: wrap;
+        }
+        .author-chip {
+            display: flex; align-items: center; gap: 10px;
+        }
+        .author-av {
+            width: 44px; height: 44px; border-radius: 50%;
+            background: var(--gold); display: flex;
+            align-items: center; justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem; color: var(--ink); font-weight: 600;
+        }
+        .author-chip div strong { display: block; font-size: .9rem; color: #fff; font-weight: 500; }
+        .author-chip div span { font-size: .78rem; color: rgba(255,255,255,.45); }
+        .article-date-tag { font-size: .82rem; color: rgba(255,255,255,.35); }
+        .article-body-wrap {
+            background: #fff;
+            max-width: 820px; margin: -36px auto 80px;
+            padding: 60px 64px;
+            box-shadow: 0 20px 60px rgba(0,0,0,.1);
+            position: relative; z-index: 2;
+        }
+        .article-body { font-size: 1.08rem; color: var(--ink-muted); line-height: 1.85; }
+        .article-body h2 { font-size: 1.9rem; color: var(--gold-dark); margin: 48px 0 20px; border-bottom: 1px solid var(--line-strong); padding-bottom: 10px; }
+        .article-body h3 { font-size: 1.4rem; color: var(--ink); margin: 36px 0 14px; }
+        .article-body p { margin-bottom: 22px; }
+        .article-body blockquote {
+            border-left: 3px solid var(--gold);
+            padding: 20px 26px;
+            margin: 30px 0;
+            font-style: italic;
+            background: var(--parchment-dark);
+            color: var(--ink-muted);
+        }
+        .article-body ul, .article-body ol { margin: 20px 0 20px 28px; }
+        .article-body li { margin-bottom: 8px; }
+        .close-article-btn {
+            position: fixed; top: 24px; right: 24px;
+            width: 46px; height: 46px;
+            background: rgba(0,0,0,.7); backdrop-filter: blur(6px);
+            border: 1px solid rgba(255,255,255,.1);
+            color: #fff; font-size: 1.1rem;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; z-index: 2001; transition: background .3s;
+        }
+        .close-article-btn:hover { background: var(--gold-dark); }
+        .article-foot {
+            display: flex; justify-content: center; gap: 16px;
+            padding: 40px 0 20px; border-top: 1px solid var(--line);
+            margin-top: 50px;
+        }
+        .btn-share {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 26px; background: var(--gold); border: none;
+            color: var(--ink); font-family: 'Outfit', sans-serif;
+            font-size: .85rem; font-weight: 600; cursor: pointer;
+            transition: background .3s;
+        }
+        .btn-share:hover { background: var(--gold-light); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .sobre-grid { grid-template-columns: 1fr; gap: 60px; }
+            .sobre-img-wrap { max-width: 460px; }
+            .areas-grid { grid-template-columns: 1fr; }
+            .contato-grid { grid-template-columns: 1fr; gap: 50px; }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none; position: absolute; top: 80px; left: 0;
+                width: 100%; background: rgba(14,14,14,.97);
+                flex-direction: column; gap: 0;
+                border-top: 1px solid rgba(184,148,95,.15);
+            }
+            nav ul.open { display: flex; }
+            nav ul li a {
+                display: block; padding: 16px 24px;
+                border-bottom: 1px solid rgba(255,255,255,.05);
+            }
+            .hamburger { display: flex; }
+            .hero-content { padding: 120px 0 80px; }
+            .hero h2 { font-size: 2.4rem; }
+            .hero-ctas { flex-direction: column; gap: 12px; }
+            .areas-grid { grid-template-columns: 1fr; }
+            .form-row2 { grid-template-columns: 1fr; }
+            .af-row { grid-template-columns: 1fr; }
+            .article-body-wrap { padding: 36px 24px; margin: -20px auto 50px; }
+            .article-title { font-size: 1.9rem; }
+            .sobre-badge { bottom: -14px; right: -10px; padding: 14px 18px; }
+            .sobre-badge strong { font-size: 1.6rem; }
+        }
+
+        @media (max-width: 480px) {
+            section { padding: 80px 0; }
+            .hero h2 { font-size: 2rem; }
+            .modal-box { padding: 24px 20px; }
+            .login-box { padding: 36px 24px; }
+        }
+
+        /* ── ANIMATIONS ── */
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
+        .reveal.in { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: .1s; }
+        .reveal-delay-2 { transition-delay: .2s; }
+        .reveal-delay-3 { transition-delay: .3s; }
+    </style>
+</head>
+<body>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/5535999031837?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Pamela%20Bacellar" class="whatsapp-btn" target="_blank" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Admin -->
+<div class="admin-btn" id="adminBtn" title="Painel administrativo">
+    <i class="fas fa-cog"></i>
+</div>
+
+<!-- ══ HEADER ══ -->
+<header id="mainHeader">
+    <div class="container header-inner">
+        <div class="logo-wrap">
+            <img src="logopam.png" alt="Logo Pamela Bacellar" class="logo-img">
+            <div class="logo-text">
+                <h1>PAMELA BACELLAR</h1>
+                <span>Advocacia Criminal</span>
+            </div>
+        </div>
+        <div class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </div>
+        <nav id="mainNav">
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#areas">Atuação</a></li>
+                <li><a href="#conteudo">Conteúdo</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="inicio">
+    <div class="hero-bg"></div>
+    <div class="hero-lines"></div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-eyebrow">Advocacia Criminal Especializada</div>
+            <h2>
+                Defesa Criminal<br>
+                com <em>Excelência</em><br>
+                e Estratégia
+            </h2>
+            <p class="hero-sub">Especializada em combater condenações injustas e garantir que a justiça prevaleça em todas as etapas do processo penal.</p>
+            <div class="hero-ctas">
+                <a href="#contato" class="btn-primary">
+                    Agendar Consulta <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#sobre" class="btn-outline">Conheça a Dra. Pamela</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══ SOBRE ══ -->
+<section class="sobre" id="sobre">
+    <div class="container">
+        <div class="sobre-grid">
+            <div class="sobre-img-wrap reveal">
+                <img src="pamela.png" alt="Dra. Pamela Bacellar">
+                <div class="sobre-badge">
+                    <strong>OAB</strong>
+                    MG 241622
+                </div>
+            </div>
+            <div class="sobre-text reveal reveal-delay-1">
+                <div class="section-label">Sobre</div>
+                <h2 class="section-title-text">Dra. Pamela<br><em>Bacellar</em></h2>
+                <div class="title-rule"></div>
+                <p>Advogada criminalista formada pela <strong>PUC Minas</strong> e pós-graduanda em <strong>Perícia Criminal</strong>. Minha trajetória no Direito foi impulsionada pelo compromisso inabalável com a justiça e pela defesa intransigente dos direitos fundamentais.</p>
+                <p>Atuo com excelência tanto na <strong>área criminal</strong> quanto na <strong>cível</strong>, com enfoque especializado na análise técnica de provas materiais e digitais, assegurando a rigorosa observância da cadeia de custódia.</p>
+                <p>Enfrento diariamente casos de <strong>condenações injustas</strong> e <strong>penas desproporcionais</strong>, demonstrando que o processo não se encerra com a sentença.</p>
+                <div class="credenciais">
+                    <div class="cred-item"><i class="fas fa-university"></i> Graduação — PUC Minas</div>
+                    <div class="cred-item"><i class="fas fa-microscope"></i> Pós-Graduação em Perícia Criminal</div>
+                    <div class="cred-item"><i class="fas fa-map-marker-alt"></i> Poços de Caldas — MG</div>
+                    <div class="cred-item"><i class="fas fa-balance-scale"></i> OAB/MG Nº 241622</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══ ÁREAS ══ -->
+<section class="areas" id="areas">
+    <div class="container">
+        <div class="section-label">Especialidades</div>
+        <h2 class="section-title-text reveal">Áreas de <em>Atuação</em></h2>
+        <div class="areas-grid">
+            <div class="area-card reveal">
+                <div class="area-num">01</div>
+                <i class="fas fa-gavel area-icon"></i>
+                <h3>Defesa Criminal</h3>
+                <p>Atuação estratégica em todas as fases do processo penal, desde a investigação preliminar até recursos em instâncias superiores, com foco na preservação de direitos e garantias fundamentais.</p>
+            </div>
+            <div class="area-card reveal reveal-delay-1">
+                <div class="area-num">02</div>
+                <i class="fas fa-microscope area-icon"></i>
+                <h3>Perícia Criminal</h3>
+                <p>Análise técnica especializada de provas materiais e digitais, com rigorosa observância da cadeia de custódia para assegurar a validade processual e a robustez probatória.</p>
+            </div>
+            <div class="area-card reveal reveal-delay-2">
+                <div class="area-num">03</div>
+                <i class="fas fa-file-contract area-icon"></i>
+                <h3>Revisão Criminal</h3>
+                <p>Atuação dedicada em processos de revisão criminal para casos de condenações injustas ou penas desproporcionais, buscando a justiça mesmo após o trânsito em julgado.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══ CONTEÚDO ══ -->
+<section class="conteudo" id="conteudo">
+    <div class="container">
+        <div class="section-label">Publicações</div>
+        <h2 class="section-title-text reveal">Conteúdo <em>Jurídico</em></h2>
+        <div class="conteudo-grid" id="publicationsGrid">
+            <!-- carregado via Firebase -->
+        </div>
+    </div>
+</section>
+
+<!-- ══ CONTATO ══ -->
+<section class="contato" id="contato">
+    <div class="container">
+        <div class="contato-grid">
+            <div class="reveal">
+                <div class="section-label">Contato</div>
+                <h2 class="section-title-text">Fale <em>Comigo</em></h2>
+                <div class="title-rule" style="background: linear-gradient(90deg, var(--gold), transparent);"></div>
+                <div class="contato-info-block">
+                    <h3>Informações de Contato</h3>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <span>Poços de Caldas — MG</span>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-phone"></i></div>
+                        <span>(35) 99903-1837</span>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-clock"></i></div>
+                        <span>Segunda a Sexta: 9h às 18h</span>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-info-circle"></i></div>
+                        <span>Consulta inicial para análise do caso</span>
+                    </div>
+                    <div class="social-row">
+                        <a href="https://wa.me/5535999031837" target="_blank" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/pamelabacellaradv/" target="_blank" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="reveal reveal-delay-1">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-row2">
+                        <div class="field">
+                            <label for="nome">Nome Completo</label>
+                            <input type="text" id="nome" name="nome" required placeholder="Seu nome">
+                        </div>
+                        <div class="field">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" id="telefone" name="telefone" required placeholder="(00) 00000-0000">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                    </div>
+                    <div class="field">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" required placeholder="Descreva brevemente sua situação..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="align-self: flex-start;">
+                        Enviar Mensagem <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+    <div class="container footer-inner">
+        <div class="footer-logo">PAMELA BACELLAR</div>
+        <div class="footer-rule"></div>
+        <nav class="footer-nav">
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#areas">Áreas de Atuação</a>
+            <a href="#conteudo">Conteúdo</a>
+            <a href="#contato">Contato</a>
+        </nav>
+        <p class="footer-copy">&copy; 2025 Dra. Pamela Bacellar — Advocacia Criminal. Todos os direitos reservados.</p>
+        <p class="oab-tag">PAMELA BACELLAR DA SILVA — OAB/MG Nº 241622</p>
+    </div>
+</footer>
+
+<!-- ══ LOGIN MODAL ══ -->
+<div class="login-modal" id="loginModal">
+    <div class="login-box">
+        <h2>Acesso Admin</h2>
+        <p>Entre com suas credenciais para acessar o painel</p>
+        <form id="loginForm">
+            <div class="af-group">
+                <label for="loginEmail">E-mail</label>
+                <input type="email" id="loginEmail" required>
+            </div>
+            <div class="af-group">
+                <label for="loginPassword">Senha</label>
+                <input type="password" id="loginPassword" required>
+            </div>
+            <div class="login-actions">
+                <button type="button" class="btn-cancel-plain" id="cancelLogin">Cancelar</button>
+                <button type="submit" class="btn-primary">Entrar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- ══ PAINEL ADMIN ══ -->
+<div class="overlay" id="adminPanel">
+    <div class="modal-box">
+        <div class="modal-header">
+            <h2>Painel Administrativo</h2>
+            <button class="modal-close" id="closeAdmin"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="admin-tabs-row">
+            <button class="tab-btn active" data-tab="publications">Publicações</button>
+            <button class="tab-btn" data-tab="new-publication">Nova Publicação</button>
+        </div>
+        <div class="tab-content active" id="publications-tab">
+            <div id="publicationList"></div>
+        </div>
+        <div class="tab-content" id="new-publication-tab">
+            <form id="publicationForm" style="background: var(--parchment-dark); padding: 28px; border: 1px solid var(--line);">
+                <div class="af-row">
+                    <div class="af-group">
+                        <label for="pubTitle">Título</label>
+                        <input type="text" id="pubTitle" required>
+                    </div>
+                    <div class="af-group">
+                        <label for="pubType">Tipo</label>
+                        <select id="pubType" required>
+                            <option value="">Selecione...</option>
+                            <option value="video">Vídeo (Instagram)</option>
+                            <option value="article">Artigo</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="af-group">
+                    <label for="pubSummary">Resumo</label>
+                    <textarea id="pubSummary" required></textarea>
+                </div>
+                <div class="af-group" id="videoUrlContainer" style="display:none;">
+                    <label for="pubVideoUrl">URL do Vídeo</label>
+                    <input type="url" id="pubVideoUrl">
+                </div>
+                <div class="af-group" id="articleContentContainer" style="display:none;">
+                    <label for="pubArticleContent">Conteúdo</label>
+                    <div><textarea id="pubArticleContent"></textarea></div>
+                </div>
+                <div class="af-group">
+                    <label for="pubIcon">Ícone (Font Awesome)</label>
+                    <input type="text" id="pubIcon" value="fas fa-book" placeholder="Ex: fas fa-gavel">
+                </div>
+                <button type="submit" class="btn-primary">Salvar Publicação</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- ══ ARTIGO ══ -->
+<div class="article-page" id="articlePage">
+    <button class="close-article-btn" id="closeArticle"><i class="fas fa-times"></i></button>
+    <div class="article-hero">
+        <div class="article-wrap">
+            <h1 class="article-title" id="articleTitle"></h1>
+            <div class="article-meta-row">
+                <div class="author-chip">
+                    <div class="author-av">PB</div>
+                    <div>
+                        <strong>Dra. Pamela Bacellar</strong>
+                        <span>Advogada Criminalista</span>
+                    </div>
+                </div>
+                <span class="article-date-tag" id="articleDate"></span>
+            </div>
+        </div>
+    </div>
+    <div class="article-wrap" style="padding: 0 20px;">
+        <div class="article-body-wrap">
+            <div class="article-body" id="articleBody"></div>
+            <div class="article-foot">
+                <button class="btn-share" onclick="shareArticle()"><i class="fas fa-share-alt"></i> Compartilhar</button>
+                <a href="#contato" class="btn-primary" onclick="document.getElementById('articlePage').style.display='none'">
+                    Agendar Consulta
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Firebase -->
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+    import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyDcsvTgvQ-YHhK5K_ZMFyTIlp4pG-bmby4",
+        authDomain: "pamadvsistem.firebaseapp.com",
+        projectId: "pamadvsistem",
+        storageBucket: "pamadvsistem.firebasestorage.app",
+        messagingSenderId: "1033106060833",
+        appId: "1:1033106060833:web:69b42b7c0960374ae45560",
+        measurementId: "G-JV2XHE01KK"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    window.firebaseApp = app; window.firebaseAuth = auth; window.firebaseDb = db;
+    window.firebaseSignIn = signInWithEmailAndPassword;
+    window.firebaseOnAuthStateChanged = onAuthStateChanged;
+    window.firebaseSignOut = signOut;
+    window.firebaseCollection = collection;
+    window.firebaseAddDoc = addDoc;
+    window.firebaseGetDocs = getDocs;
+    window.firebaseDoc = doc;
+    window.firebaseUpdateDoc = updateDoc;
+    window.firebaseDeleteDoc = deleteDoc;
+</script>
+
+<script>
+    tinymce.init({
+        selector: '#pubArticleContent',
+        plugins: ['advlist','autolink','lists','link','image','charmap','preview','anchor','pagebreak','searchreplace','visualblocks','code','fullscreen','insertdatetime','media','table','emoticons','help','wordcount'],
+        toolbar: 'undo redo | blocks | bold italic underline | alignleft aligncenter alignright | bullist numlist | link image | forecolor | fullscreen | help',
+        toolbar_mode: 'sliding', height: 480,
+        content_style: 'body { font-family: Georgia, serif; font-size: 16px; line-height: 1.6; color: #2a2a2a; } h1,h2,h3 { color: #8a6b42; } blockquote { border-left: 3px solid #b8945f; padding: 15px; background: #faf8f3; }',
+        promotion: false, branding: false
+    });
+
+    let currentUser = null, editingPublicationId = null;
+
+    const adminBtn = document.getElementById('adminBtn');
+    const loginModal = document.getElementById('loginModal');
+    const adminPanel = document.getElementById('adminPanel');
+    const articlePage = document.getElementById('articlePage');
+    const loginForm = document.getElementById('loginForm');
+    const cancelLogin = document.getElementById('cancelLogin');
+    const closeAdmin = document.getElementById('closeAdmin');
+    const closeArticle = document.getElementById('closeArticle');
+    const publicationForm = document.getElementById('publicationForm');
+    const pubTypeSelect = document.getElementById('pubType');
+    const videoUrlContainer = document.getElementById('videoUrlContainer');
+    const articleContentContainer = document.getElementById('articleContentContainer');
+    const publicationsGrid = document.getElementById('publicationsGrid');
+    const publicationList = document.getElementById('publicationList');
+    const tabBtns = document.querySelectorAll('.tab-btn');
+
+    if (window.firebaseOnAuthStateChanged) {
+        window.firebaseOnAuthStateChanged(window.firebaseAuth, (user) => {
+            currentUser = user || null;
+        });
+    }
+
+    adminBtn.addEventListener('click', () => {
+        if (currentUser) { adminPanel.style.display = 'block'; loadPublications(); }
+        else { loginModal.style.display = 'flex'; }
+    });
+    cancelLogin.addEventListener('click', () => loginModal.style.display = 'none');
+    closeAdmin.addEventListener('click', () => { adminPanel.style.display = 'none'; resetForm(); });
+    closeArticle.addEventListener('click', () => articlePage.style.display = 'none');
+
+    loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        try {
+            await window.firebaseSignIn(window.firebaseAuth, document.getElementById('loginEmail').value, document.getElementById('loginPassword').value);
+            loginModal.style.display = 'none';
+            adminPanel.style.display = 'block';
+            loadPublications();
+        } catch(err) { alert('Erro: ' + err.message); }
+    });
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const id = btn.getAttribute('data-tab');
+            tabBtns.forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById(id + '-tab').classList.add('active');
+        });
+    });
+
+    pubTypeSelect.addEventListener('change', () => {
+        const t = pubTypeSelect.value;
+        videoUrlContainer.style.display = t === 'video' ? 'block' : 'none';
+        articleContentContainer.style.display = t === 'article' ? 'block' : 'none';
+        document.getElementById('pubVideoUrl').required = t === 'video';
+    });
+
+    publicationForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const type = document.getElementById('pubType').value;
+        const data = {
+            title: document.getElementById('pubTitle').value,
+            type, summary: document.getElementById('pubSummary').value,
+            icon: document.getElementById('pubIcon').value,
+            videoUrl: type === 'video' ? document.getElementById('pubVideoUrl').value : '',
+            articleContent: type === 'article' ? tinymce.get('pubArticleContent').getContent() : '',
+            createdAt: new Date().toISOString()
+        };
+        try {
+            if (editingPublicationId) {
+                await window.firebaseUpdateDoc(window.firebaseDoc(window.firebaseDb, 'publications', editingPublicationId), data);
+                alert('Publicação atualizada!');
+            } else {
+                await window.firebaseAddDoc(window.firebaseCollection(window.firebaseDb, 'publications'), data);
+                alert('Publicação criada!');
+            }
+            resetForm(); loadPublications();
+            document.querySelector('[data-tab="publications"]').click();
+        } catch(err) { alert('Erro: ' + err.message); }
+    });
+
+    function resetForm() {
+        publicationForm.reset();
+        if (tinymce.get('pubArticleContent')) tinymce.get('pubArticleContent').setContent('');
+        editingPublicationId = null;
+        videoUrlContainer.style.display = 'none';
+        articleContentContainer.style.display = 'none';
+    }
+
+    async function loadPublications() {
+        try {
+            const snap = await window.firebaseGetDocs(window.firebaseCollection(window.firebaseDb, 'publications'));
+            const pubs = [];
+            snap.forEach(d => pubs.push({ id: d.id, ...d.data() }));
+            pubs.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+            renderGrid(pubs); renderAdminList(pubs);
+        } catch(err) { console.error(err); }
+    }
+
+    function renderGrid(pubs) {
+        publicationsGrid.innerHTML = '';
+        if (!pubs.length) {
+            publicationsGrid.innerHTML = '<p style="color:var(--ink-muted); grid-column: 1/-1;">Nenhuma publicação ainda.</p>';
+            return;
+        }
+        pubs.forEach(pub => {
+            const card = document.createElement('div');
+            card.className = 'conteudo-card';
+            const action = pub.type === 'video'
+                ? `<a href="${pub.videoUrl}" target="_blank" class="card-link">Ver vídeo <i class="fas fa-arrow-right"></i></a>`
+                : `<a href="#" class="card-link read-article" data-id="${pub.id}">Ler artigo <i class="fas fa-arrow-right"></i></a>`;
+            card.innerHTML = `
+                <div class="card-img-area"><i class="${pub.icon || 'fas fa-book'}"></i></div>
+                <div class="card-body">
+                    <h3>${pub.title}</h3>
+                    <p>${pub.summary}</p>
+                    ${action}
+                </div>`;
+            publicationsGrid.appendChild(card);
+        });
+        document.querySelectorAll('.read-article').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                openArticle(e.currentTarget.getAttribute('data-id'), pubs);
+            });
+        });
+    }
+
+    function renderAdminList(pubs) {
+        publicationList.innerHTML = '';
+        pubs.forEach(pub => {
+            const item = document.createElement('div');
+            item.className = 'pub-item';
+            item.innerHTML = `
+                <div>
+                    <h4>${pub.title}</h4>
+                    <p>${pub.type === 'video' ? 'Vídeo' : 'Artigo'} &mdash; ${new Date(pub.createdAt).toLocaleDateString('pt-BR')}</p>
+                </div>
+                <div class="pub-actions">
+                    <button class="btn-edit" data-id="${pub.id}">Editar</button>
+                    <button class="btn-del" data-id="${pub.id}">Excluir</button>
+                </div>`;
+            publicationList.appendChild(item);
+        });
+        document.querySelectorAll('.btn-edit').forEach(btn => btn.addEventListener('click', e => editPub(e.target.getAttribute('data-id'), pubs)));
+        document.querySelectorAll('.btn-del').forEach(btn => btn.addEventListener('click', e => deletePub(e.target.getAttribute('data-id'))));
+    }
+
+    function editPub(id, pubs) {
+        const pub = pubs.find(p => p.id === id); if (!pub) return;
+        document.getElementById('pubTitle').value = pub.title;
+        document.getElementById('pubType').value = pub.type;
+        document.getElementById('pubSummary').value = pub.summary;
+        document.getElementById('pubIcon').value = pub.icon;
+        if (pub.type === 'video') { document.getElementById('pubVideoUrl').value = pub.videoUrl; videoUrlContainer.style.display = 'block'; articleContentContainer.style.display = 'none'; }
+        else { if (tinymce.get('pubArticleContent')) tinymce.get('pubArticleContent').setContent(pub.articleContent || ''); videoUrlContainer.style.display = 'none'; articleContentContainer.style.display = 'block'; }
+        editingPublicationId = id;
+        document.querySelector('[data-tab="new-publication"]').click();
+    }
+
+    async function deletePub(id) {
+        if (!confirm('Excluir esta publicação?')) return;
+        try {
+            await window.firebaseDeleteDoc(window.firebaseDoc(window.firebaseDb, 'publications', id));
+            alert('Excluída!'); loadPublications();
+        } catch(err) { alert('Erro: ' + err.message); }
+    }
+
+    function openArticle(id, pubs) {
+        const pub = pubs.find(p => p.id === id); if (!pub || pub.type !== 'article') return;
+        document.getElementById('articleTitle').textContent = pub.title;
+        document.getElementById('articleDate').textContent = `Publicado em ${new Date(pub.createdAt).toLocaleDateString('pt-BR')}`;
+        document.getElementById('articleBody').innerHTML = pub.articleContent;
+        articlePage.style.display = 'block';
+        window.scrollTo(0, 0);
+    }
+
+    window.shareArticle = function() {
+        if (navigator.share) {
+            navigator.share({ title: document.getElementById('articleTitle').textContent, url: window.location.href });
+        } else {
+            navigator.clipboard.writeText(window.location.href).then(() => alert('Link copiado!'));
+        }
+    };
+
+    // Header scroll
+    const header = document.getElementById('mainHeader');
+    window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const navUl = document.querySelector('nav ul');
+    hamburger.addEventListener('click', () => navUl.classList.toggle('open'));
+    document.querySelectorAll('nav ul li a').forEach(a => a.addEventListener('click', () => navUl.classList.remove('open')));
+
+    // Contact form
+    document.getElementById('contactForm').addEventListener('submit', e => {
+        e.preventDefault();
+        alert('Obrigada pelo contato! Retornarei em breve para agendarmos sua consulta.');
+        e.target.reset();
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            const id = a.getAttribute('href');
+            if (id === '#') return;
+            const el = document.querySelector(id);
+            if (el) { e.preventDefault(); window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' }); }
+        });
+    });
+
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('in'); observer.unobserve(entry.target); } });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Load
+    document.addEventListener('DOMContentLoaded', loadPublications);
+    loadPublications();
+</script>
+</body>
+</html>
