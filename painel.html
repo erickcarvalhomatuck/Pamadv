@@ -826,7 +826,7 @@ window._fb={
   onAuth:(cb)=>onAuthStateChanged(_auth,cb),
   col:(c)=>collection(_db,c),
   add:(c,d)=>addDoc(collection(_db,c),d),
-  get:(c)=>getDocs(query(collection(_db,c),orderBy('_ts','desc'))),
+  get:async(c)=>{try{return await getDocs(query(collection(_db,c),orderBy('_ts','desc')));}catch(e){if(e.code==='permission-denied'||e.code==='unavailable')throw e;return await getDocs(collection(_db,c));}},
   upd:(c,id,d)=>updateDoc(doc(_db,c,id),d),
   del:(c,id)=>deleteDoc(doc(_db,c,id))
 };
@@ -942,6 +942,24 @@ document.getElementById('logoutBtn').addEventListener('click',async()=>{
   if(confirm('Deseja sair?'))await window._fb.signOut();
 });
 
+/* ── AVISO DE ERRO DO BANCO ── */
+function dbWarn(code){
+  if(document.getElementById('dbWarn'))return;
+  const msgs={
+    'permission-denied':'Sem permissão para ler o banco. Confira se as regras do Firestore foram publicadas e se o seu e-mail está na função isAdmin() (firestore.rules).',
+    'not-found':'O Firestore ainda não foi criado neste projeto. No console do Firebase, vá em Build > Firestore Database > Criar banco de dados.',
+    'failed-precondition':'O Firestore ainda não foi criado neste projeto. No console do Firebase, vá em Build > Firestore Database > Criar banco de dados.',
+    'unavailable':'Sem conexão com o banco. Verifique a internet e tente de novo.'
+  };
+  const d=document.createElement('div');d.id='dbWarn';d.className='alert-item';
+  d.style.cssText='margin:16px 32px 0;font-size:.92rem';
+  d.innerHTML='<i class="fas fa-exclamation-triangle"></i>';
+  const s=document.createElement('span');
+  s.textContent=(msgs[code]||'Não foi possível carregar os dados do banco.')+' (código: '+(code||'desconhecido')+')';
+  d.appendChild(s);
+  const t=document.querySelector('.topbar');if(t&&t.parentNode)t.parentNode.insertBefore(d,t.nextSibling);
+}
+
 /* ── LOAD ALL ── */
 async function loadAll(){
   await Promise.all([loadClientes(),loadProcessos(),loadEventos(),loadTarefas(),loadDocs(),loadConteudos(),loadLeads()]);
@@ -951,7 +969,7 @@ async function loadAll(){
 /* ── HELPERS CRUD ── */
 async function loadCol(colName,arr,renderFn){
   try{const s=await window._fb.get(colName);arr.length=0;s.forEach(d=>arr.push({id:d.id,...d.data()}));if(renderFn)renderFn();}
-  catch(e){console.error('Erro ao carregar',colName);}
+  catch(e){console.error('Erro ao carregar',colName,'|',e.code,'|',e.message);dbWarn(e.code);}
 }
 
 /* ═══ CLIENTES ═══ */
